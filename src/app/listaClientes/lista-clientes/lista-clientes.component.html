@@ -1,0 +1,43 @@
+<div class="container">
+    <hr>
+    <h1 class="text-center">
+        Lista de clientes
+    </h1>
+    
+    <table class="table table-bordered" width="100%" cellSpacing="0">
+        <thead>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Ap. Paterno</th>
+            <th scope="col">Ap. Materno</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.id}}</td>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.ap_paterno}}</td>
+                <td>{{cliente.ap_materno}}</td>
+                <td>{{cliente.telefono}}</td>
+                <td>{{cliente.fecha_nacimiento}}</td>
+                <td>
+                    <a [routerLink]="['/clientes/detalle', cliente.id]" class="btn btn-xs btn-success">Detalle</a>
+                </td>
+                <td>
+                    <button (click)="eliminar(cliente.id)" class="btn btn-xs btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+        <!-- <thead>
+            <th>Nombre de fruta</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of frutas">
+                <td>{{f}}</td>
+            </tr>
+        </tbody> -->
+    </table>
+</div>

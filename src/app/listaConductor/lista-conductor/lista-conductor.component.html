@@ -1,0 +1,45 @@
+<div class="container">
+    <hr>
+    <h1 class="text-center">
+        Lista de conductores
+    </h1>
+    
+    <table class="table table-bordered" width="100%" cellSpacing="0">
+        <thead>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Ap. Paterno</th>
+            <th scope="col">Ap. Materno</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Licencia</th>
+            <th scope="col">Marca del vehículo</th>
+            <th scope="col">Modelo del vehículo</th>
+            <th scope="col">Placa del vehículo</th>
+            <th scope="col">Activo</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let conductor of conductores">
+                <td>{{conductor.id}}</td>
+                <td>{{conductor.nombre}}</td>
+                <td>{{conductor.apPaterno}}</td>
+                <td>{{conductor.apMaterno}}</td>
+                <td>{{conductor.fechaNacimiento}}</td>
+                <td>{{conductor.telefono}}</td>
+                <td>{{conductor.licencia}}</td>
+                <td>{{conductor.marcaVehiculo}}</td>
+                <td>{{conductor.modeloVehiculo}}</td>
+                <td>{{conductor.placasVechiculo}}</td>
+                <td>{{conductor.activo}}</td>
+                <td>
+                    <a [routerLink]="['/clientes/detalle', conductor.id]" class="btn btn-xs btn-success">Detalle</a>
+                </td>
+                <td>
+                    <button (click)="eliminar(conductor.id)" class="btn btn-xs btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <br>
+    <a [routerLink]="['/clientes/detalle', idCliente]" class="btn btn-xs btn-success">Regresar</a>
+    <br><br>
+    <h1 class="text-center">Alta de calificacion para el alumno {{idCliente}}</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>ID: </strong>{{cliente.id}}</li>
+                    <li class="list-group-item"><strong>Cliente: </strong>{{cliente.nombre + " " + cliente.ap_paterno + " " + cliente.ap_materno}}</li>
+                    <li class="list-group-item"><strong>Conductor: </strong>
+                        <select class="form-control" #conductor>
+                            <option *ngFor="let conductor of conductores" [value]="conductor.id" >{{conductor.nombre+' '+conductor.apPaterno}}</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item"><strong>Fecha de viaje: </strong>
+                        <input type="text" #fechaViaje class="form-control" [value]="fechaHoy" disabled>
+                    </li>
+                    <li class="list-group-item"><strong>Hora de viaje: </strong>
+                        <input type="text" #horaViaje class="form-control" [value]="horaHoy" disabled>
+                    </li>
+                    <li class="list-group-item"><strong>Dirección de salida: </strong>
+                        <input type="text" #dirSalida class="form-control">
+                    </li>
+                    <li class="list-group-item"><strong>Dirección de llegada: </strong>
+                        <input type="text" #dirLlegada class="form-control">
+                    </li>
+                    <li class="list-group-item"><strong>Método de pago: </strong>
+                        <select class="form-control" #medioPago>
+                            <option *ngFor="let medio of mediosPago" [value]="medio" >{{medio}}</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item"><strong>Total a pagar: </strong>
+                        <input type="number" #totalPago class="form-control">
+                    </li>
+                    <li class="list-group-item"><strong>Calificacion: </strong>
+                        <input type="text" class="form-control" #calif>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-xs btn-primary" (click)="guardarViaje(cliente.id)">Guardar</button>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+
+<div class="container">
+    <h1 class="text-center">
+        Formulario Alta de Conductor
+    </h1>
+    <div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>Nombre</label>
+                <input type="text" class="form-control" #nombre>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Ap. Paterno</label>
+                <input type="text" class="form-control" #apPat>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Ap. Materno</label>
+                <input type="text" class="form-control" #apMat>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Fecha de nacimiento</label>
+                <input type="text" class="form-control" #fechaNacimiento>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Telefono</label>
+                <input type="number" class="form-control" #telefono>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Licencia</label>
+                <input type="text" class="form-control" #licencia>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Marca del vehiculo</label>
+                <input type="text" class="form-control" #marcaVehiculo>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Modelo del vehiculo</label>
+                <input type="text" class="form-control" #modeloVehiculo>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Placas del vehiculo</label>
+                <input type="text" class="form-control" #placasVehiculo>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <label>Activo</label>
+                <input type="number" class="form-control" #activo>
+            </div>
+            <hr>
+        </div>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-primary btn-xs" (click)="guardar()">Guardar</button>
+        </div>
+    </div>
+</div>

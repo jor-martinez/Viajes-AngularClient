@@ -1,0 +1,58 @@
+<div class="container">
+    <br>
+    <a [routerLink]="['/clientes/listado']" class="btn btn-xs btn-success">Regresar</a>
+    <h1 class="text-center">Detalle del Cliente {{cliente.id}}</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>ID: </strong>{{cliente.id}}</li>
+                    <li class="list-group-item"><strong>Nombre: </strong>{{cliente.nombre}}</li>
+                    <li class="list-group-item"><strong>Ap. Paterno: </strong>{{cliente.ap_paterno}}</li>
+                    <li class="list-group-item"><strong>Ap. Materno: </strong>{{cliente.ap_materno}}</li>
+                    <li class="list-group-item"><strong>Telefono: </strong>{{cliente.telefono}}</li>
+                    <li class="list-group-item"><strong>Fecha de nacimiento: </strong>{{cliente.fecha_nacimiento}}</li>
+                    <li class="list-group-item"><a [routerLink]="['/viajes/alta', cliente.id]" class="btn btn-xs btn-warning"
+                        style="color: white;">Generar viaje</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <h5 class="text-center">Historial de viajes</h5>
+    <br>
+    <div class="row">
+        <table class="table table-bordered" width="100%" cellSpacing="0">
+            <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Calificacion</th>
+                <th scope="col">Conductor</th>
+                <th scope="col">Medio de pago</th>
+                <th scope="col">Pago total</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let viaje of cliente.viajes">
+                    <td>{{viaje.id}}</td>
+                    <td>{{viaje.fecha}}</td>
+                    <td>{{viaje.hora}}</td>
+                    <td>{{viaje.calificacion}}</td>
+                    <td>{{viaje.conductor}}</td>
+                    <td>{{viaje.metodoPago}}</td>
+                    <td>{{viaje.pagoTotal}}</td>
+                    <!-- <td>
+                        <a [routerLink]="['/alumnos/calificacion/editar', viaje.idReg, alumno.id, materia.id]"
+                        class="btn btn-xs btn-primary">Editar</a>
+                    </td>
+                    <td>
+                        <button (click)="eliminarCalificacion(materia.idReg)" class="btn btn-xs btn-danger">Eliminar</button>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
